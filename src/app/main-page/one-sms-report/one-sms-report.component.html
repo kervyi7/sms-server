@@ -1,0 +1,26 @@
+<div class="col-12">
+    <div class="table-block" *ngIf="load">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">{{'REPORT_DETAILS.NUMBER' | translate}}</th>
+                    <th scope="col">{{'REPORT_DETAILS.DATE' | translate}}</th>
+                    <th scope="col">{{'REPORT_DETAILS.STATUS' | translate}}</th>
+                    <th scope="col">{{'REPORT_DETAILS.ERRORS' | translate}}</th>
+                    <th scope="col">{{'REPORT_DETAILS.CHANEL' | translate}}</th>
+                    <th scope="col">{{'REPORT_DETAILS.OPERATOR' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let statistic of statistics">
+                    <td>{{statistic.phoneNumber}}</td>
+                    <td>{{statistic.date | date:'dd.MM.yyyy HH:mm'}}</td>
+                    <td>{{statistic.status}}</td>
+                    <td>{{statistic.error}}</td>
+                    <td>{{statistic.channelName}}</td>
+                    <td>{{statistic.provider}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="master">
+  <div class="container">
+    <div class="row">
+      <div class="main col-12 col-md-6">
+        <div class="logo">
+          {{'AUTH.IN' | translate}}
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">{{'AUTH.LOGIN' | translate}}</label>
+            <input type="text" class="form-control" placeholder="{{'AUTH.ENTER_LOGIN' | translate}}" [(ngModel)]="username" name="username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">{{'AUTH.PASSWORD' | translate}}</label>
+            <input type="password" class="form-control" placeholder="{{'AUTH.ENTER_PASSWORD' | translate}}" [(ngModel)]="password"
+              name="password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label" for="exampleCheck1">{{'AUTH.REMEMBER_ME' | translate}}</label>
+          </div>
+          <div>
+          </div>
+          <div class="login">
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">{{'AUTH.IN' | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

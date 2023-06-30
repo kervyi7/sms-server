@@ -1,0 +1,108 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="./campaign" routerLinkActive="active">Создать рассылку<span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="./reports" routerLinkActive="active">Отчеты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="./incoming-messages" routerLinkActive="active">Входящие SMS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="./settings" routerLinkActive="active">Настройки</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="./reference" routerLinkActive="active">Справка</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button type="button" class="btn btn-danger button">Выход</button>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+    (click)="toggleCollapsed()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./campaign" routerLinkActive="active">Создать рассылку<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./reports" routerLinkActive="active">Отчеты</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./incoming-messages" routerLinkActive="active">Входящие SMS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./settings" routerLinkActive="active">Настройки</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./reference" routerLinkActive="active">Справка</a>
+      </li>
+      <div>
+        <button type="button" class="btn btn-danger button">Выход</button>
+      </div>
+    </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./campaign" routerLinkActive="active">{{'MAIN.CREATE_NEWSLETTER' | translate}}<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./reports" routerLinkActive="active">{{'MAIN.REPORTS' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./incoming-messages" routerLinkActive="active">{{'MAIN.IN_SMS' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./one-sms" routerLinkActive="active">{{'MAIN.ONE_SMS' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./one-sms-report" routerLinkActive="active">{{'MAIN.ONE_SMS_REPORT' | translate}}</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./settings" routerLinkActive="active">{{'MAIN.SETTINGS' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="./reference" routerLinkActive="active">{{'MAIN.REFERENCE' | translate}}</a>
+      </li> -->
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <button type="button" (click)="changeTranslate('en')" class="btn btn-danger button form-control mr-sm-2">{{'MAIN.EN' | translate}}</button>
+    </div>
+    <div class="form-inline my-2 my-lg-0">
+      <button type="button" (click)="changeTranslate('ru')" class="btn btn-danger button form-control mr-sm-2">{{'MAIN.RU' | translate}}</button>
+    </div>
+    <div class="form-inline my-2 my-lg-0">
+      <button type="button" (click)="exit()" class="btn btn-danger button form-control mr-sm-2">{{'MAIN.OUT' | translate}}</button>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

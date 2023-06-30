@@ -1,0 +1,67 @@
+<div class="master">
+  <div class="container">
+    <div class="row">
+      <div class="main col-12">
+        <div class="section-name">
+          {{'REPORTS.REPORTS' | translate}}
+        </div>
+        <div class="datepickers">
+          <div class="input-group">
+            <input class="form-control" placeholder="{{'REPORTS.SELECTED_DATE' | translate}}" ngbDatepicker #from="ngbDatepicker" #fromDate>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="from.toggle()" type="button"></button>
+            </div>
+          </div>
+          <div class="input-group">
+            <input class="form-control" placeholder="{{'REPORTS.SELECTED_DATE' | translate}}" ngbDatepicker #to="ngbDatepicker" #toDate>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="to.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="input mb-3 search-input">
+          <input type="text" class="form-control col-10 col-md-10" placeholder="{{'REPORTS.ENTER_SEARCH_TEXT' | translate}}" aria-describedby="search" #filter>
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" id="search" (click)="search(filter.value, fromDate.value, toDate.value)">{{'REPORTS.SEARCH' | translate}}</button>
+          </div>
+        </div>
+        <div *ngIf="!load">
+          <mat-progress-spinner class="example-margin" mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+        <div class="accordion" id="accordionExample" *ngIf="load">
+          <div class="card" *ngFor="let campaignVM of campaignVMs">
+            <div class="card-header" (click)="onActive(campaignVM) ">
+              <div class="name-status">
+                <div class="name">{{campaignVM.name}}</div>
+                <div *ngIf="campaignVM.status == 'Started'" class="status-working">{{'REPORTS.IN_WORK' | translate}}</div>
+                <div *ngIf="campaignVM.status == 'Finished'" class="status-finished">{{'REPORTS.COMPLETED' | translate}}</div>
+              </div>
+              <div class="date-price">
+                <div class="date">
+                  <div>{{campaignVM.start | date:'dd.MM.yyyy HH:mm'}}</div>
+                  <div>{{campaignVM.ended | date:'dd.MM.yyyy HH:mm'}}</div>
+                </div>
+                <div class="sms-price">
+                  <div class="count">{{campaignVM.countPhone}} SMS</div>
+                  <div class="price">0</div>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="campaignVM.id == selectedId ? 'collapse show' : 'collapse'" aria-labelledby="headingOne">
+              <div class="card-body">
+                <div class="sms-text">
+                  {{campaignVM.smsText}}
+                </div>
+                <div class="button-details">
+                  <button class="btn btn-primary" type="button" id="details"
+                    [routerLink]="['details', campaignVM.id]">{{'REPORTS.DETAILS' | translate}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

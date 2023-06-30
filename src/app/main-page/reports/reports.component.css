@@ -1,0 +1,141 @@
+.master {
+    background: #faf9f9;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: fit-content;
+    min-height: 100vh;
+    color: #373A3C;
+}
+
+.section-name {
+    font-size: 2em;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2vh;
+}
+
+.datepickers {
+    display: flex;
+    width: 83%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timepickers {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.calendar {
+    background-image: url(src/assets/img/icon.png);
+    background-size: 24px;   
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 2em;
+}
+
+.calendar:hover {
+    background-image: url(src/assets/img/icons_h.png);
+}
+
+.datepickers .input-group {
+    width: 19em;
+    margin-bottom: 1em;
+}
+
+::ng-deep.mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode=indeterminate] {
+    animation: mat-progress-spinner-linear-rotate 2s linear infinite;
+    margin: auto;
+}
+
+::ng-deep.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #007bff;
+}
+
+.search-input {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-input .btn {
+    margin-bottom: 4vh;
+}
+
+.search-input .form-control {
+    width: 16em;
+    margin-bottom: 4vh;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    color: #373A3C;
+}
+
+.date-price {
+    display: flex;
+    justify-content: space-between;
+    width: 11em;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sms-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-working {
+    background: #F0AD4E;
+    border-radius: 4px;
+    font-size: 0.7em;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 7em;
+}
+
+.status-finished {
+    background: #5CB85C;
+    border-radius: 4px;
+    font-size: 0.7em;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 7em;
+}
+
+.count {
+    font-weight: bold;
+}
+
+.button-details {
+    width: 100%;
+    text-align: end;
+}

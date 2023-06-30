@@ -1,0 +1,163 @@
+.master {
+    background: #faf9f9;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.main {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: fit-content;
+    padding: 2em;
+    color: #373A3C;
+}
+
+.main .form-check {
+    display: flex;
+    justify-content: space-between;
+    width: 17em;
+    padding: 0;
+}
+
+.form-check-input {
+    position: unset;
+    margin-top: .3rem;
+    margin-left: 0; 
+}
+
+.section-name {
+    font-size: 2em;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2vh;
+}
+
+.label-name {
+    font-size: 1.9vh;
+}
+
+.form-check-label {
+    margin-bottom: 1.5vh;
+}
+
+.create {
+    margin-top: 2vh;
+}
+
+.btn-group {
+    margin-top: 2vh;
+}
+
+.alert {
+    margin-top: 2vh;
+}
+
+.label-date {
+    margin-top: 2vh;
+    margin-bottom: 1.5vh;
+    font-size: 1.9vh;
+}
+
+.chars {
+    margin-top: 2vh;
+}
+
+.timepicker {
+    margin-left: 5vw;
+}
+
+.calendar {
+    background-image: url(src/assets/img/icon.png);
+    background-size: 24px;   
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 2em;
+}
+
+.calendar:hover {
+    background-image: url(src/assets/img/icons_h.png);
+}
+
+.btn-info {
+    margin-left: 1rem;
+}
+
+.input-file {
+    overflow: hidden;
+    margin-right: -2.5em;
+    display: inline-flex;
+}
+
+.weekday {
+    padding-left: 4vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.weekday input[type=time] {
+    width: 6.5em;
+}
+
+.check-label {
+    width: 2em;
+}
+
+.checkboxes-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-bottom: -1em;
+}
+
+.weekday .form-check-input {
+    position: relative;
+    margin-left: -1.25rem;
+}
+
+.weekday .form-check-label {
+    margin-top: 0.5em;
+}
+
+::ng-deep.btn-link {
+    display: none;
+}
+
+.weekday input[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 0.9em;
+    margin-bottom: -3em;
+}
+
+.datetimepicker {
+    justify-content: space-between;
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+::ng-deep.datetimepicker .form-control {
+    width: 85%;
+}
+
+.datetimepicker .input-group  {
+    width: 75%;
+    height: fit-content;
+    margin-bottom: 1em;
+}
+
+.datetimepicker .input-group .form-control {
+    width: 65%;
+}

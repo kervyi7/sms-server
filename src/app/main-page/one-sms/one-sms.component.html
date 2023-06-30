@@ -1,0 +1,5 @@
+<input type="text" placeholder="{{'ONE_SMS.PHONE_NUMBER' | translate}}" [(ngModel)]="phoneNumber">
+<input type="text" placeholder="{{'ONE_SMS.MESSAGE' | translate}}" [(ngModel)]="text">
+<button (click)="sendSMS()" [disabled]="isDisable()">{{'ONE_SMS.SEND' | translate}}</button>
+<label *ngIf="isOk">{{'ONE_SMS.SENT' | translate}}</label>
+<label *ngIf="isError">{{'ONE_SMS.ERROR' | translate}}</label>

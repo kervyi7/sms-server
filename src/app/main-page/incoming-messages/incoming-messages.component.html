@@ -1,0 +1,55 @@
+<div class="master">
+  <div class="container">
+    <div class="row">
+      <div class="main col-12">
+        <div class="section-name">
+           {{'INCOMING.INCOMING_SMS' | translate}}
+        </div>
+        <div class="datepickers">
+          <div class="input-group col-10 col-md-6">
+            <input class="form-control" placeholder="{{'INCOMING.SELECTED_DATE' | translate}}" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+          <div class="input-group col-10 col-md-6">
+            <input class="form-control" placeholder="{{'INCOMING.SELECTED_DATE' | translate}}" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="input mb-3 search-input">
+          <input type="text" class="form-control col-10 col-md-4" placeholder="{{'INCOMING.BY_NUMBER' | translate}}" aria-describedby="search">
+          <input type="text" class="form-control col-10 col-md-4" placeholder="{{'INCOMING.IN_TEXT' | translate}}" aria-describedby="search">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" id="search">{{'INCOMING.SEARCH' | translate}}</button>
+            <button class="btn btn-outline-primary" type="button" id="download">{{'INCOMING.DOWNLOAD' | translate}}</button>
+          </div>
+        </div>
+        <div class="table-block">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">{{'INCOMING.NUMBER' | translate}}</th>
+                <th scope="col">{{'INCOMING.OPERATOR' | translate}}</th>
+                <th scope="col">{{'INCOMING.TEXT' | translate}}</th>
+                <th scope="col">{{'INCOMING.DATE' | translate}}</th>
+                <th scope="col">{{'INCOMING.CHANEL' | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>380959348186</td>
+                <td>Vodafone</td>
+                <td>Hello</td>
+                <td>15/5/2019</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+<div class="master">
+    <div *ngIf="!load">
+        <mat-progress-spinner class="example-margin" mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
+    <div [ngClass]="load ? 'show' : 'hide'">
+        <div class="container">
+            <div class="row">
+                <div class="info-chart col-12">
+                    <div class="main col-12 col-md-6">
+                        <div *ngIf="load">
+                            <div class="section-name">
+                                {{'REPORT_DETAILS.REPORT' | translate}} - {{campaignDetails.name}}
+                            </div>
+                            <div class="buttons">
+                                <div class="button-group">
+                                    <button type="button" matTooltip="{{'REPORT_DETAILS.BACK' | translate}}" class="btn btn-primary" routerLink="/main/reports">
+                                        <mat-icon>arrow_back</mat-icon>
+                                    </button>
+                                    <button matTooltip="{{'REPORT_DETAILS.DOWNLOAD' | translate}}" type="button" class="btn btn-outline-primary">
+                                        <mat-icon>save_alt</mat-icon>
+                                    </button>
+                                </div>
+                                <div class="button-group">
+                                    <button matTooltip="{{'REPORT_DETAILS.STOP' | translate}}" type="button" class="btn btn-outline-secondary">
+                                        <mat-icon>stop</mat-icon>
+                                    </button>
+                                    <button  matTooltip="{{'REPORT_DETAILS.DELETE' | translate}}" type="button" class="btn btn-danger">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                            <caption class="caption">{{'REPORT_DETAILS.GENERAL_INFO' | translate}}</caption>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.NEWSLETTER_ID' | translate}}</strong></td>
+                                        <td>{{campaignDetails.campaignId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.NEWSLETTER_NAME' | translate}}</strong></td>
+                                        <td>{{campaignDetails.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.DATE_CREATION' | translate}}</strong></td>
+                                        <td>{{createdDate | date:'dd.MM.yyyy HH:mm'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.START_NEWSLETTER' | translate}}</strong></td>
+                                        <td>{{startDate | date:'dd.MM.yyyy HH:mm'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.END_NEWSLETTER' | translate}}</strong></td>
+                                        <td>{{endDate | date:'dd.MM.yyyy HH:mm'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.VOLUME_NEWSLETTER' | translate}}</strong></td>
+                                        <td>{{campaignDetails.countPhone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.SENTED' | translate}}</strong></td>
+                                        <td>{{campaignDetails.sentTo}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.DELIVERED' | translate}}</strong></td>
+                                        <td>{{campaignDetails.delivered}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{'REPORT_DETAILS.COUNT_CHAR_PARTS' | translate}}</strong></td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="main col-12 col-md-6">
+                        <div class="chart-text">
+                            <div>
+                                <div class="chart-buttons">
+                                    <button type="button" class="btn btn-link" (click)="onActive()"
+                                        [disabled]="isStatus == true">{{'REPORT_DETAILS.STATUSES' | translate}}</button>
+                                    <button type="button" class="btn btn-link" (click)="onActive()"
+                                        [disabled]="isStatus == false">{{'REPORT_DETAILS.OPERATORS' | translate}}</button>
+                                </div>
+                                <div [ngClass]="isStatus ? 'show' : 'hide'" #chart>
+                                </div>
+                                <div [ngClass]="isStatus ? 'hide' : 'show'" #chart2>
+                                </div>
+                            </div>
+                            <div class="sms-text">
+                                {{campaignDetails.smsText}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="table-block" *ngIf="load">
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">{{'REPORT_DETAILS.NUMBER' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.OPERATOR' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.STATUS' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.PRICE' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.DATE' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.CHANEL' | translate}}</th>
+                                    <th scope="col">{{'REPORT_DETAILS.ERRORS' | translate}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let phone of phones">
+                                    <td>{{phone.number}}</td>
+                                    <td>{{phone.provider}}</td>
+                                    <td>{{phone.status}}</td>
+                                    <td>{{phone.price}}</td>
+                                    <td>{{phone.date | date:'dd.MM.yyyy HH:mm'}}</td>
+                                    <td>{{phone.channel}}</td>
+                                    <td>{{phone.error}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

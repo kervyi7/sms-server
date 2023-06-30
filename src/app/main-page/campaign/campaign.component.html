@@ -1,0 +1,145 @@
+<div class="master">
+  <div class="container">
+    <div class="row">
+      <div class="main col-12">
+        <div class="section-name">
+          {{'CAMPAIGN.CREATE_MAILING_LIST' | translate}}
+        </div>
+        <form #createForm="ngForm" (ngSubmit)="onCreate()">
+          <div class="form-group">
+            <label class="form-check-label label-name"
+              for="exampleInputEmail1">{{'CAMPAIGN.NEWSLETTER_NAME' | translate}}</label><br />
+            <input type="text" class="form-control" placeholder="{{'CAMPAIGN.ENTER_NAME' | translate}}" [(ngModel)]="campaign.name"
+              name="name">
+          </div>
+          <div class="form-group form-check">
+            <div>
+              <label class="form-check-label label-name"
+                for="exampleCheck1">{{'CAMPAIGN.CHANNELS_CONNECTION' | translate}}</label><br />
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+              <label class="form-check-label" for="exampleCheck1">1</label><br />
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+              <label class="form-check-label" for="exampleCheck1">2</label><br />
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+              <label class="form-check-label" for="exampleCheck1">3</label><br />
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+              <label class="form-check-label" for="exampleCheck1">4</label><br />
+            </div>
+            <div>
+              <label class="form-check-label label-name"
+                for="exampleCheck1">{{'CAMPAIGN.SHIPPING_METHOD' | translate}}</label><br />
+              <input type="checkbox" class="form-check-input" [(ngModel)]="campaign.isEvenly" id="exampleCheck1"
+                name="isEvenly">
+              <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.ALL_EVENLY' | translate}}</label><br />
+              <input type="checkbox" class="form-check-input" [(ngModel)]="campaign.isRandom" name="isRandom"
+                id="exampleCheck1">
+              <label class="form-check-label"
+                for="exampleCheck1">{{'CAMPAIGN.EVERYTHING_RANDOM' | translate}}</label><br />
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label class="form-check-label label-name"
+              for="exampleInputPassword1">{{'CAMPAIGN.RECIPIENT_PHONES' | translate}}</label><br />
+            <textarea type="text" (change)="confirm()" [(ngModel)]="inputOfNumbers" name="phones" class="form-control"
+              id="outputFile" placeholder="{{'CAMPAIGN.ENTER_PHONE_NUMBER' | translate}}"></textarea>
+            {{'CAMPAIGN.RECOGNIZED' | translate}}: {{numbers.length}}<br />
+            {{'CAMPAIGN.WRONG_FORMAT' | translate}}: {{wrongFormat}}
+          </div>
+          <div class="custom-file">
+            <div class="input-file">
+              <input type="file" (change)="incomingfile($event)" accept=".xlsx">
+            </div>
+          </div>
+          <label class="form-check-label label-date"
+            for="exampleDate1">{{'CAMPAIGN.DATE_TIME_START_SENDING' | translate}}</label><br />
+          <div class="datetimepicker">
+            <div class="input-group">
+              <input class="form-control" placeholder="{{'CAMPAIGN.SELECTED_DATE' | translate}}" name="dp"
+                [(ngModel)]="dateNow" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+            <ngb-timepicker [(ngModel)]="time" name="time"></ngb-timepicker>
+          </div>
+          <br />
+          <label class="form-check-label label-name"
+            for="exampleInputPassword1">{{'CAMPAIGN.DISPATDH_TIME' | translate}}</label><br />
+          <div class="weekday col-11 col-md-4">
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.MONDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" value="10:00" disabled />
+              <input type="time" class="form-control" value="18:00" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.TUESDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" value="10:00" disabled />
+              <input type="time" class="form-control" value="18:00" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.WEDNESDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" value="10:00" disabled />
+              <input type="time" class="form-control" value="18:00" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.TURSDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" value="10:00" disabled />
+              <input type="time" class="form-control" value="18:00" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.FRIDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" value="10:00" disabled />
+              <input type="time" class="form-control" value="18:00" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.SATURDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" disabled />
+              <input type="time" class="form-control" disabled />
+            </div>
+            <div class="checkboxes-time">
+              <div class="check-label">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isEvenly" disabled>
+                <label class="form-check-label" for="exampleCheck1">{{'CAMPAIGN.SUNDAY' | translate}}</label>
+              </div>
+              <input type="time" class="form-control" disabled />
+              <input type="time" class="form-control" disabled />
+            </div>
+          </div>
+          <label class="form-check-label label-name"
+            for="exampleInputText1">{{'CAMPAIGN.MESSAGE_TEXT' | translate}}</label><br />
+          <textarea type="text" class="form-control" id="exampleInputText1" placeholder="{{'CAMPAIGN.ENTER_TEXT' | translate}}"
+                      [(ngModel)]="campaign.smsText" (input)="onInputChange()" name="smsText" #message></textarea>
+          <div class="chars">
+            {{message.value.length}} {{'CAMPAIGN.SINN_S' | translate}} / {{getSmsCount(message.value)}} {{'CAMPAIGN.POSTS' | translate}} {{coding}}
+          </div>
+          <!-- <div class="alert alert-success" role="alert">
+            <b>Цена</b> за рассылку: <br />
+            Длительность:
+          </div> -->
+          <div>
+            <button type="submit" class="btn btn-primary create">{{'CAMPAIGN.CREATE' | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

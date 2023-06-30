@@ -1,0 +1,89 @@
+.master {
+    background: #faf9f9;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 2em;
+    color: #373A3C;
+}
+
+.section-name {
+    font-size: 2em;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2vh;
+}
+
+.datepickers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timepickers {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.calendar {
+    background-image: url(src/assets/img/icon.png);
+    background-size: 24px;   
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 2em;
+}
+
+.calendar:hover {
+    background-image: url(src/assets/img/icons_h.png);
+}
+
+.datepickers .input-group {
+    width: 45%;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 1em;
+}
+
+.table {
+    margin-top: 2em;
+}
+
+.search-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-input .form-control {
+    width: 36%;
+    margin-bottom: 1em;
+}
+
+.search-input .btn {
+    margin-right: 1em;
+    height: fit-content;
+}
+
+.table-block {
+    overflow-x: scroll;
+}
+
+.table-block::-webkit-scrollbar {
+    width: 0;
+}
+

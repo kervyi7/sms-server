@@ -1,0 +1,31 @@
+.master {
+    background: #faf9f9;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 4vh;
+    color: #373A3C;
+}
+
+.section-name {
+    font-size: 4.5vh;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2vh;
+}
+
