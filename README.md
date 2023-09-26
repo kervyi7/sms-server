@@ -1,27 +1,30 @@
-# SmsServer
+# SMS Campaign
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+The main goal of the project is to create an environment for easy and simple sending of SMS messages.
 
-## Development server
+## Description:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is a web application created using the SPA method. Here you can use your profile, where you can create a campaign and check its results. It was developed by the designer, front-end and back-end developers. In this repository you can only find the front part of the project. Server part under NDA.
 
-## Code scaffolding
+## Technologies: 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- HTML5
+- CSS
+- TypeScript
+- Angular 7.3.5
+- Bootstrap
+- Microsoft Azure
+- .NET Framework
+- Postgre DB
 
-## Build
+## Duties:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Develop a front part of the application.
 
-## Running unit tests
+## Key Results:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Improved my skills in using Angular.
+- Improved my skills in creating adaptive page.
+- Gained an experience working with back-end developer.
+- Learned how work with HTTP query requests. 
+- Learned how to support a website over a long period of time.
