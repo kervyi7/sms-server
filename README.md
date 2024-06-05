@@ -13,8 +13,7 @@ This is a web application created using the SPA method. Here you can use your pr
 - TypeScript
 - Angular 7.3.5
 - Bootstrap
-- Postgre DB
-
+  
 ## Duties:
 
 - Develop a front part of the application.
