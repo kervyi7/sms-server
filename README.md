@@ -4,7 +4,7 @@ The main goal of the project is to create an environment for easy and simple sen
 
 ## Description:
 
-This is a web application created using the SPA method. Here you can use your profile, where you can create a campaign and check its results. It was developed by the designer, front-end and back-end developers. In this repository you can only find the front part of the project. Server part under NDA.
+This is a web application created using the SPA method. Here you can use your profile, where you can create a campaign and check its results. It was developed by the designer, front-end and back-end developers. In this repository you can only find the front part of the project.
 
 ## Technologies: 
 
@@ -13,8 +13,6 @@ This is a web application created using the SPA method. Here you can use your pr
 - TypeScript
 - Angular 7.3.5
 - Bootstrap
-- Microsoft Azure
-- .NET Framework
 - Postgre DB
 
 ## Duties:
